@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Employee Management System</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+    <h1>Employee Management System</h1>
+    <hr>
+    <h2>Update Employee Details</h2>
+    <form action="#" th:action="@{/saveEmployee}" th:object="${employee}" method="post">
+        <input type="hidden" th:field="*{id}" />
+        <input type="text" th:field="*{fName}"  class="form-control mb-4 col=4">
+        <input type="text" th:field="*{sName}"  class="form-control mb-4 col=4">
+        <input type="text" th:field="*{email}"  class="form-control mb-4 col=4">
+        <input type="text" th:field="*{dept}"   class="form-control mb-4 col=4">
+
+        <button type="Submit" class="btn btn-info col-2">Update Employee</button>
+
+    </form>
+    <hr>
+</div>
+</body>
+</html>
