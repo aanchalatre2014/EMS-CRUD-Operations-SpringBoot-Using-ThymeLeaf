@@ -2,34 +2,33 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Employee Management System</title>
+    <title>Student Management System</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-
 </head>
 <body>
 <div align="left" class="container my-2">
 
-    <h1>Employee List</h1>
-    <a th:href="@{/addEmployeeForm}" class="btn btn-primary btn-sm mb-3">Add Employee</a>
+    <h1>Student List</h1>
+    <a th:href="@{/addStudentForm}" class="btn btn-primary btn-sm mb-3">Add Student</a>
     <table border="1" class="table table-striped table table-responsive-md">
         <thead>
         <tr>
-            <th>Employee First Name</th>
-            <th>Employee Last Name</th>
-            <th>Employee Email</th>
-            <th>Employee Department</th>
+            <th>Student First Name</th>
+            <th>Student Last Name</th>
+            <th>Student Email</th>
+            <th>Stream/Specialization</th>
             <th>Actions</th>
         </tr>
         </thead>
         <tbody>
-            <tr th:each="employee:${listEmployees}">
-                <td th:text="${employee.fName}"></td>
-                <td th:text="${employee.sName}"></td>
-                <td th:text="${employee.email}"></td>
-                <td th:text="${employee.dept}"></td>
-                <td><a th:href="@{/updateEmployeeForm/{id}(id=${employee.id})}" class="btn btn-primary">Update</a></td>
-                <td><a th:href="@{/deleteEmployee/{id}(id=${employee.id})}" class="btn btn-danger">Delete</a></td>
-            </tr>
+        <tr th:each="student:${listStudents}">
+            <td th:text="${student.fName}"></td>
+            <td th:text="${student.sName}"></td>
+            <td th:text="${student.email}"></td>
+            <td th:text="${student.stream}"></td>
+            <td><a th:href="@{/updateStudentForm/{id}(id=${student.id})}" class="btn btn-primary">Update</a></td>
+            <td><a th:href="@{/deleteStudent/{id}(id=${student.id})}" class="btn btn-danger">Delete</a></td>
+        </tr>
         </tbody>
     </table>
     <div th:if="${totalPages > 1}">
